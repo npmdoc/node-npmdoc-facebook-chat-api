@@ -1,0 +1,1632 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/Schmavery/facebook-chat-api#readme"
+
+    >facebook-chat-api (v1.3.0)</a>
+</h1>
+<h4>Facebook chat API that doesn't rely on XMPP.  Will NOT be deprecated April 30th 2015.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.facebook-chat-api">module facebook-chat-api</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">facebook-chat-api.</span>utils</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.facebook-chat-api.utils">module facebook-chat-api.utils</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.arrToForm">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>arrToForm
+            <span class="apidocSignatureSpan">(form)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.formatCookie">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatCookie
+            <span class="apidocSignatureSpan">(arr, url)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.formatDate">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatDate
+            <span class="apidocSignatureSpan">(date)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.formatDeltaMessage">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatDeltaMessage
+            <span class="apidocSignatureSpan">(m)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.formatEvent">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatEvent
+            <span class="apidocSignatureSpan">(m)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.formatMessage">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatMessage
+            <span class="apidocSignatureSpan">(m)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.formatPresence">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatPresence
+            <span class="apidocSignatureSpan">(presence, userID)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.formatRead">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatRead
+            <span class="apidocSignatureSpan">(event)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.formatReadReceipt">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatReadReceipt
+            <span class="apidocSignatureSpan">(event)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.formatThread">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatThread
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.formatTyp">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatTyp
+            <span class="apidocSignatureSpan">(event)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.generateAccessiblityCookie">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>generateAccessiblityCookie
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.generateOfflineThreadingID">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>generateOfflineThreadingID
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.generatePresence">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>generatePresence
+            <span class="apidocSignatureSpan">(userID)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.generateThreadingID">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>generateThreadingID
+            <span class="apidocSignatureSpan">(clientID)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.generateTimestampRelative">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>generateTimestampRelative
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.get">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>get
+            <span class="apidocSignatureSpan">(url, jar, qs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.getAppState">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>getAppState
+            <span class="apidocSignatureSpan">(jar)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.getFrom">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>getFrom
+            <span class="apidocSignatureSpan">(str, startToken, endToken)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.getGUID">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>getGUID
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.getJar">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>getJar
+            <span class="apidocSignatureSpan">(store)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.getSignatureID">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>getSignatureID
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.getType">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>getType
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.isReadableStream">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>isReadableStream
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.makeDefaults">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>makeDefaults
+            <span class="apidocSignatureSpan">(html, userID)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.makeParsable">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>makeParsable
+            <span class="apidocSignatureSpan">(html)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.parseAndCheckLogin">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>parseAndCheckLogin
+            <span class="apidocSignatureSpan">(jar, defaultFuncs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.post">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>post
+            <span class="apidocSignatureSpan">(url, jar, form)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.postFormData">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>postFormData
+            <span class="apidocSignatureSpan">(url, jar, form, qs)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.facebook-chat-api.utils.saveCookies">
+            function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>saveCookies
+            <span class="apidocSignatureSpan">(jar)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.facebook-chat-api" id="apidoc.module.facebook-chat-api">module facebook-chat-api</a></h1>
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.facebook-chat-api.utils" id="apidoc.module.facebook-chat-api.utils">module facebook-chat-api.utils</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.arrToForm" id="apidoc.element.facebook-chat-api.utils.arrToForm">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>arrToForm
+        <span class="apidocSignatureSpan">(form)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function arrToForm(form) {
+  return arrayToObject(form, function(v) {return v.name;}, function(v) {return v.val;});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  arr.push({val: $(v).val(), name: $(v).attr(&#x22;name&#x22;)});
+});
+
+arr = arr.filter(function(v) {
+  return v.val &#x26;&#x26; v.val.length;
+});
+
+var form = utils.<span class="apidocCodeKeywordSpan">arrToForm</span>(arr);
+form.lsd = utils.getFrom(html, &#x22;[\&#x22;LSD\&#x22;,[],{\&#x22;token\&#x22;:\&#x22;&#x22;, &#x22;\&#x22;}&#x22;);
+form.lgndim = new Buffer(&#x22;{\&#x22;w\&#x22;:1440,\&#x22;h\&#x22;:900,\&#x22;aw\&#x22;:1440,\&#x22;ah\&#x22;:834,\&#x22;c\&#x22
+;:24}&#x22;).toString(&#x27;base64&#x27;);
+form.email = email;
+form.pass = password;
+form.default_persistent = &#x27;0&#x27;;
+form.lgnrnd = utils.getFrom(html, &#x22;name=\&#x22;lgnrnd\&#x22; value=\&#x22;&#x22;, &#x22;\&#x22;&#x22;);
+form.locale = &#x27;en_US&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.formatCookie" id="apidoc.element.facebook-chat-api.utils.formatCookie">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatCookie
+        <span class="apidocSignatureSpan">(arr, url)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatCookie(arr, url) {
+  return arr[0]+&#x22;=&#x22;+arr[1]+&#x22;; Path=&#x22; + arr[3] + &#x22;; Domain=&#x22;+url+&#x22;.com&#x22;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// which happen to be conveniently indicated with a _js_ in front of their
+// variable name.
+//
+// ---------- Very Hacky Part Starts -----------------
+var willBeCookies = html.split(&#x22;\&#x22;_js_&#x22;);
+willBeCookies.slice(1).map(function(val) {
+  var cookieData = JSON.parse(&#x22;[\&#x22;&#x22; + utils.getFrom(val, &#x22;&#x22;, &#x22;]&#x22;) + &#x22;]&#x22;);
+  jar.setCookie(utils.<span class="apidocCodeKeywordSpan">formatCookie</span>(cookieData, &#x22;facebook&#x22;), &#x22;https://www
+.facebook.com&#x22;);
+});
+// ---------- Very Hacky Part Ends -----------------
+
+log.info(&#x22;login&#x22;, &#x22;Logging in...&#x22;);
+return utils
+  .post(&#x22;https://www.facebook.com/login.php?login_attempt=1&#x26;lwv=110&#x22;, jar, form)
+  .then(utils.saveCookies(jar))
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.formatDate" id="apidoc.element.facebook-chat-api.utils.formatDate">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatDate
+        <span class="apidocSignatureSpan">(date)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatDate(date) {
+  var d = date.getUTCDate(); d = d &#x3e;= 10 ? d : &#x27;0&#x27;+d;
+  var h = date.getUTCHours(); h = h &#x3e;= 10 ? h : &#x27;0&#x27;+h;
+  var m = date.getUTCMinutes(); m = m &#x3e;= 10 ? m : &#x27;0&#x27;+m;
+  var s = date.getUTCSeconds(); s = s &#x3e;= 10 ? s : &#x27;0&#x27;+s;
+  return NUM_TO_DAY[date.getUTCDay()] + &#x27;, &#x27; +
+    d+&#x27; &#x27;+ NUM_TO_MONTH[date.getUTCMonth()] +&#x27; &#x27;+ date.getUTCFullYear() +&#x27; &#x27;+
+    h+&#x27;:&#x27;+m+&#x27;:&#x27;+s+&#x27; GMT&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.formatDeltaMessage" id="apidoc.element.facebook-chat-api.utils.formatDeltaMessage">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatDeltaMessage
+        <span class="apidocSignatureSpan">(m)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatDeltaMessage(m){
+  var md = m.delta.messageMetadata;
+  return {
+    type: &#x22;message&#x22;,
+    senderID: md.actorFbId,
+    body: m.delta.body,
+    threadID: (md.threadKey.threadFbId || md.threadKey.otherUserFbId).toString(),
+    messageID: md.messageId,
+    attachments: (m.delta.attachments || []).map(v =&#x3e; _formatAttachment(v)),
+    timestamp: md.timestamp,
+    isGroup: !!md.threadKey.threadFbId
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+break;
+            case &#x27;delta&#x27;:
+if (ctx.globalOptions.pageID || (v.delta.class !== &#x22;NewMessage&#x22; &#x26;&#x26; !ctx.globalOptions.listenEvents)) return
+
+if (v.delta.class == &#x22;NewMessage&#x22;) {
+  (function resolveAttachmentUrl(i) {
+    if (i == v.delta.attachments.length) {
+      var fmtMsg = utils.<span class="apidocCodeKeywordSpan">formatDeltaMessage</span>(v);
+      return (!ctx.globalOptions.selfListen &#x26;&#x26; fmtMsg.senderID === ctx.userID) ? undefined : globalCallback(null, fmtMsg
+);
+    } else {
+      if (v.delta.attachments[i].mercury.attach_type == &#x27;photo&#x27;) {
+        defaultFuncs
+          .get(&#x22;https://www.facebook.com/mercury/attachments/photo/?photo_id=&#x22; + v.delta.attachments[i].fbid, ctx.jar, {})
+          .then(utils.parseAndCheckLogin(ctx.jar, defaultFuncs))
+          .then(function (resData) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.formatEvent" id="apidoc.element.facebook-chat-api.utils.formatEvent">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatEvent
+        <span class="apidocSignatureSpan">(m)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatEvent(m) {
+  var logMessageType;
+  var logMessageData;
+
+  // log:thread-color =&#x3e; {theme_color}
+  // log:user-nickname =&#x3e; {participant_id, nickname}
+  // log:thread-icon =&#x3e; {thread_icon}
+  // log:thread-name =&#x3e; {name}
+  // log:subscribe =&#x3e; {addedParticipants - [Array]}
+  // log:unsubscribe =&#x3e; {leftParticipantFbId}
+
+  switch (m.class) {
+    case &#x27;AdminTextMessage&#x27;:
+      logMessageData = m.untypedData;
+      switch (m.type) {
+        case &#x27;change_thread_theme&#x27;:
+          logMessageType = &#x22;log:thread-color&#x22;;
+          break;
+        case &#x27;change_thread_nickname&#x27;:
+          logMessageType = &#x22;log:user-nickname&#x22;;
+          break;
+        case &#x27;change_thread_icon&#x27;:
+          logMessageType = &#x22;log:thread-icon&#x22;;
+          break;
+      }
+      break;
+    case &#x27;ThreadName&#x27;:
+      logMessageType = &#x22;log:thread-name&#x22;;
+      logMessageData = { name: m.name };
+      break;
+    case &#x27;ParticipantsAddedToGroupThread&#x27;:
+      logMessageType = &#x22;log:subscribe&#x22;;
+      logMessageData = { addedParticipants: m.addedParticipants }
+      break;
+    case &#x27;ParticipantLeftGroupThread&#x27;:
+      logMessageType = &#x22;log:unsubscribe&#x22;;
+      logMessageData = { leftParticipantFbId: m.leftParticipantFbId }
+      break;
+  }
+
+  return {
+    type: &#x22;event&#x22;,
+    threadID: m.messageMetadata.threadKey.threadFbId || m.messageMetadata.threadKey.otherUserFbId,
+    logMessageType: logMessageType,
+    logMessageData: logMessageData,
+    logMessageBody: m.messageMetadata.adminText,
+    author: m.messageMetadata.actorFbId
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+          break;
+        default:
+          return;
+      }
+    case &#x27;ThreadName&#x27;:
+    case &#x27;ParticipantsAddedToGroupThread&#x27;:
+    case &#x27;ParticipantLeftGroupThread&#x27;:
+      var formattedEvent = utils.<span class="apidocCodeKeywordSpan">formatEvent</span>(v.delta);
+      return (!ctx.globalOptions.selfListen &#x26;&#x26; formattedEvent.author.toString() === ctx.userID || !ctx.loggedIn)
+        ? undefined
+        : globalCallback(null, formattedEvent);
+  }
+
+  break;
+case &#x27;messaging&#x27;:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.formatMessage" id="apidoc.element.facebook-chat-api.utils.formatMessage">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatMessage
+        <span class="apidocSignatureSpan">(m)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatMessage(m) {
+  var originalMessage = m.message ? m.message : m;
+  var obj = {
+    type: &#x22;message&#x22;,
+    senderName: originalMessage.sender_name,
+    senderID: originalMessage.sender_fbid.toString(),
+    participantNames: (originalMessage.group_thread_info ? originalMessage.group_thread_info.participant_names : [originalMessage
+.sender_name.split(&#x27; &#x27;)[0]]),
+    participantIDs: (originalMessage.group_thread_info ? originalMessage.group_thread_info.participant_ids.map(function(v) {return
+ v.toString();}) : [originalMessage.sender_fbid]),
+    body: originalMessage.body,
+    threadID: originalMessage.tid &#x26;&#x26; originalMessage.tid.split(&#x22;.&#x22;)[0] === &#x22;id&#x22; ? originalMessage.tid.split(&#x27;.&#x27;)[1] : originalMessage
+.thread_fbid || originalMessage.other_user_fbid,
+    threadName: (originalMessage.group_thread_info ? originalMessage.group_thread_info.name : originalMessage.sender_name),
+    location: originalMessage.coordinates ? originalMessage.coordinates : null,
+    messageID: originalMessage.mid ? originalMessage.mid.toString() : originalMessage.message_id,
+    attachments: formatAttachment(originalMessage.attachments, originalMessage.attachmentIds, originalMessage.attachment_map, originalMessage
+.share_map),
+    timestamp: originalMessage.timestamp,
+    timestampAbsolute: originalMessage.timestamp_absolute,
+    timestampRelative: originalMessage.timestamp_relative,
+    timestampDatetime: originalMessage.timestamp_datetime,
+    tags: originalMessage.tags
+  };
+
+  if(m.type === &#x22;pages_messaging&#x22;) obj.pageID = m.realtime_viewer_fbid.toString();
+  obj.isGroup = obj.participantIDs.length &#x3e; 2;
+
+  return obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+                                           v.message.sender_fbid.toString() === ctx.globalOptions.pageID)) ||
+        v.realtime_viewer_fbid.toString() !== ctx.globalOptions.pageID) {
+        return;
+      }
+
+      atLeastOne = true;
+      if (ctx.loggedIn) {
+        return globalCallback(null, utils.<span class="apidocCodeKeywordSpan">formatMessage</span>(v));
+      }
+      break;
+  }
+});
+
+if(atLeastOne) {
+  // Send deliveryReceipt notification to the server
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.formatPresence" id="apidoc.element.facebook-chat-api.utils.formatPresence">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatPresence
+        <span class="apidocSignatureSpan">(presence, userID)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatPresence(presence, userID) {
+  return {
+    type: &#x22;presence&#x22;,
+    timestamp: presence.la * 1000,
+    userID: userID,
+    statuses: presence.a
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  // TODO: what happens when you&#x27;re logged in as a page?
+  if(!ctx.globalOptions.updatePresence) {
+    return;
+  }
+
+  // There should be only one key inside overlay
+  Object.keys(v.overlay).map(function(userID) {
+    var formattedPresence = utils.<span class="apidocCodeKeywordSpan">formatPresence</span>(v.overlay[userID], userID);
+    if(ctx.loggedIn) {
+      return globalCallback(null, formattedPresence);
+    }
+  });
+  break;
+case &#x27;delta&#x27;:
+  if (ctx.globalOptions.pageID || (v.delta.class !== &#x22;NewMessage&#x22; &#x26;&#x26; !ctx.globalOptions.listenEvents)) return
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.formatRead" id="apidoc.element.facebook-chat-api.utils.formatRead">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatRead
+        <span class="apidocSignatureSpan">(event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatRead(event) {
+  return {
+    threadID: ((event.chat_ids &#x26;&#x26; event.chat_ids[0]) || (event.thread_fbids &#x26;&#x26; event.thread_fbids[0])).toString(),
+    time: event.timestamp,
+    type: &#x27;read&#x27;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  switch (event.event) {
+    // &#x22;read_receipt&#x22; event triggers when other people read the user&#x27;s messages.
+    case &#x27;read_receipt&#x27;:
+      globalCallback(null, utils.formatReadReceipt(event));
+      return true;
+    // &#x22;read event&#x22; triggers when the user read other people&#x27;s messages.
+    case &#x27;read&#x27;:
+      globalCallback(null, utils.<span class="apidocCodeKeywordSpan">formatRead</span>(event));
+      return true;
+    default:
+      return false;
+  }
+}
+
+function listen() {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.formatReadReceipt" id="apidoc.element.facebook-chat-api.utils.formatReadReceipt">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatReadReceipt
+        <span class="apidocSignatureSpan">(event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatReadReceipt(event) {
+  return {
+    reader: event.reader.toString(),
+    time: event.time,
+    threadID: (event.thread_fbid || event.reader).toString(),
+    type: &#x27;read_receipt&#x27;,
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * and returns true if it did handle an event (and called the globalCallback).
+ * Returns false otherwise.
+ */
+function handleMessagingEvents(event) {
+  switch (event.event) {
+    // &#x22;read_receipt&#x22; event triggers when other people read the user&#x27;s messages.
+    case &#x27;read_receipt&#x27;:
+      globalCallback(null, utils.<span class="apidocCodeKeywordSpan">formatReadReceipt</span>(event));
+      return true;
+    // &#x22;read event&#x22; triggers when the user read other people&#x27;s messages.
+    case &#x27;read&#x27;:
+      globalCallback(null, utils.formatRead(event));
+      return true;
+    default:
+      return false;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.formatThread" id="apidoc.element.facebook-chat-api.utils.formatThread">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatThread
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatThread(data) {
+  return {
+    threadID: data.thread_fbid.toString(),
+    participants: data.participants.map(function(v) { return v.replace(&#x27;fbid:&#x27;, &#x27;&#x27;); }),
+    participantIDs: data.participants.map(function(v) { return v.replace(&#x27;fbid:&#x27;, &#x27;&#x27;); }),
+    formerParticipants: data.former_participants,
+    name: data.name,
+    nicknames: data.custom_nickname,
+    snippet: data.snippet,
+    snippetHasAttachment: data.snippet_has_attachment,
+    snippetAttachments: data.snippet_attachments,
+    snippetSender: (data.snippet_sender || &#x27;&#x27;).replace(&#x27;fbid:&#x27;, &#x27;&#x27;),
+    unreadCount: data.unread_count,
+    messageCount: data.message_count,
+    imageSrc: data.image_src,
+    timestamp: data.timestamp,
+    serverTimestamp: data.server_timestamp, // what is this?
+    muteSettings: data.muteSettings,
+    isCanonicalUser: data.is_canonical_user,
+    isCanonical: data.is_canonical,
+    canonicalFbid: data.canonical_fbid,
+    isSubscribed: data.is_subscribed,
+    rootMessageThreadingID: data.root_message_threading_id,
+    folder: data.folder,
+    isArchived: data.is_archived,
+    recipientsLoadable: data.recipients_loadable,
+    hasEmailParticipant: data.has_email_participant,
+    readOnly: data.read_only,
+    canReply: data.can_reply,
+    composerEnabled: data.composer_enabled,
+    blockedParticipants: data.blocked_participants,
+    lastMessageID: data.last_message_id
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.formatTyp" id="apidoc.element.facebook-chat-api.utils.formatTyp">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>formatTyp
+        <span class="apidocSignatureSpan">(event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function formatTyp(event) {
+  return {
+    isTyping: !!event.st,
+    from: event.from.toString(),
+    threadID: (event.to || event.thread_fbid || event.from).toString(),
+    // When receiving typ indication from mobile, `from_mobile` isn&#x27;t set.
+    // If it is, we just use that value.
+    fromMobile: event.hasOwnProperty(&#x27;from_mobile&#x27;) ? event.from_mobile : true,
+    userID: (event.realtime_viewer_fbid || event.from).toString(),
+    type: &#x27;typ&#x27;,
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+case &#x27;ttyp&#x27;:
+case &#x27;typ&#x27;:
+  if(!ctx.globalOptions.listenEvents ||
+    (!ctx.globalOptions.selfListen &#x26;&#x26; v.from.toString() === ctx.userID)) {
+    return;
+  }
+
+  return globalCallback(null, utils.<span class="apidocCodeKeywordSpan">formatTyp</span>(v));
+  break;
+case &#x27;buddylist_overlay&#x27;:
+  // TODO: what happens when you&#x27;re logged in as a page?
+  if(!ctx.globalOptions.updatePresence) {
+    return;
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.generateAccessiblityCookie" id="apidoc.element.facebook-chat-api.utils.generateAccessiblityCookie">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>generateAccessiblityCookie
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function generateAccessiblityCookie() {
+  var time = Date.now();
+  return encodeURIComponent(
+    JSON.stringify({
+      sr: 0,
+      &#x27;sr-ts&#x27;: time,
+      jk: 0,
+      &#x27;jk-ts&#x27;: time,
+      kb: 0,
+      &#x27;kb-ts&#x27;: time,
+      hcm: 0,
+      &#x27;hcm-ts&#x27;: time
+    }
+  ));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  msgs_recv: 0
+};
+var presence = utils.generatePresence(ctx.userID);
+ctx.jar.setCookie(&#x22;presence=&#x22; + presence + &#x22;; path=/; domain=.facebook.com; secure&#x22;, &#x22;https://www.facebook
+.com&#x22;);
+ctx.jar.setCookie(&#x22;presence=&#x22; + presence + &#x22;; path=/; domain=.messenger.com; secure&#x22;, &#x22;https://www.messenger
+.com&#x22;);
+ctx.jar.setCookie(&#x22;locale=en_US; path=/; domain=.facebook.com; secure&#x22;, &#x22;https://www.facebook.com&#x22;);
+ctx.jar.setCookie(&#x22;locale=en_US; path=/; domain=.messenger.com; secure&#x22;, &#x22;https://www.messenger.com&#x22;);
+ctx.jar.setCookie(&#x22;a11y=&#x22; + utils.<span class="apidocCodeKeywordSpan">generateAccessiblityCookie</span>() + &#x22;; path
+=/; domain=.facebook.com; secure&#x22;, &#x22;https://www.facebook.com&#x22;);
+
+return utils
+  .get(&#x22;https://0-edge-chat.facebook.com/pull&#x22;, ctx.jar, form)
+  .then(utils.saveCookies(ctx.jar))
+  .then(function(res) {
+    var ret = null;
+    try {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.generateOfflineThreadingID" id="apidoc.element.facebook-chat-api.utils.generateOfflineThreadingID">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>generateOfflineThreadingID
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function generateOfflineThreadingID() {
+  var ret = Date.now();
+  var value = Math.floor(Math.random() * 4294967295);
+  var str = (&#x22;0000000000000000000000&#x22; + value.toString(2)).slice(-22);
+  var msgs = ret.toString(2) + str;
+  return binaryToDecimal(msgs);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  throw {error: &#x22;ThreadID should be of type Number or String and not &#x22; + utils.getType(threadID) + &#x22;.&#x22;};
+}
+
+if (utils.getType(userID) !== &#x22;Array&#x22;) {
+  userID = [userID];
+}
+
+var messageAndOTID = utils.<span class="apidocCodeKeywordSpan">generateOfflineThreadingID</span>();
+var form = {
+  &#x27;client&#x27; : &#x27;mercury&#x27;,
+  &#x27;action_type&#x27; : &#x27;ma-type:log-message&#x27;,
+  &#x27;author&#x27; : &#x27;fbid:&#x27; + ctx.userID,
+  &#x27;thread_id&#x27; : &#x27;&#x27;,
+  &#x27;timestamp&#x27; : Date.now(),
+  &#x27;timestamp_absolute&#x27; : &#x27;Today&#x27;,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.generatePresence" id="apidoc.element.facebook-chat-api.utils.generatePresence">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>generatePresence
+        <span class="apidocSignatureSpan">(userID)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function generatePresence(userID) {
+  var time = Date.now();
+  return &#x22;E&#x22; + presenceEncode(JSON.stringify({
+    &#x22;v&#x22;: 3,
+    &#x22;time&#x22;: parseInt(time / 1000, 10),
+    &#x22;user&#x22;: userID,
+    &#x22;state&#x22;: {
+      &#x22;ut&#x22;: 0,
+      &#x22;t2&#x22;: [],
+      &#x22;lm2&#x22;: null,
+      &#x22;uct2&#x22;: time,
+      &#x22;tr&#x22;: null,
+      &#x22;tw&#x22;: Math.floor(Math.random() * 4294967295) + 1,
+      &#x22;at&#x22;: time
+    },
+    &#x22;ch&#x22;:{
+      [&#x22;p_&#x22; + userID]: 0
+    }
+  }))
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  viewer_uid : ctx.userID,
+  uid : ctx.userID,
+  state : &#x27;active&#x27;,
+  idle : 0,
+  cap : 8,
+  msgs_recv: 0
+};
+var presence = utils.<span class="apidocCodeKeywordSpan">generatePresence</span>(ctx.userID);
+ctx.jar.setCookie(&#x22;presence=&#x22; + presence + &#x22;; path=/; domain=.facebook.com; secure&#x22;, &#x22;https://www.facebook
+.com&#x22;);
+ctx.jar.setCookie(&#x22;presence=&#x22; + presence + &#x22;; path=/; domain=.messenger.com; secure&#x22;, &#x22;https://www.messenger
+.com&#x22;);
+ctx.jar.setCookie(&#x22;locale=en_US; path=/; domain=.facebook.com; secure&#x22;, &#x22;https://www.facebook.com&#x22;);
+ctx.jar.setCookie(&#x22;locale=en_US; path=/; domain=.messenger.com; secure&#x22;, &#x22;https://www.messenger.com&#x22;);
+ctx.jar.setCookie(&#x22;a11y=&#x22; + utils.generateAccessiblityCookie() + &#x22;; path=/; domain=.facebook.com; secure&#x22;, &#
+x22;https://www.facebook.com&#x22;);
+
+return utils
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.generateThreadingID" id="apidoc.element.facebook-chat-api.utils.generateThreadingID">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>generateThreadingID
+        <span class="apidocSignatureSpan">(clientID)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function generateThreadingID(clientID) {
+  var k = Date.now();
+  var l = Math.floor(Math.random() * 4294967295);
+  var m = clientID;
+  return (&#x22;&#x3c;&#x22; + k + &#x22;:&#x22; + l + &#x22;-&#x22; + m + &#x22;@mail.projektitan.com&#x3e;&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  &#x27;is_spoof_warning&#x27; : false,
+  &#x27;source&#x27; : &#x27;source:chat:web&#x27;,
+  &#x27;source_tags[0]&#x27; : &#x27;source:chat&#x27;,
+  &#x27;log_message_type&#x27; : &#x27;log:subscribe&#x27;,
+  &#x27;status&#x27; : &#x27;0&#x27;,
+  &#x27;offline_threading_id&#x27; : messageAndOTID,
+  &#x27;message_id&#x27; : messageAndOTID,
+  &#x27;threading_id&#x27;: utils.<span class="apidocCodeKeywordSpan">generateThreadingID</span>(ctx.clientID),
+  &#x27;manual_retry_cnt&#x27; : &#x27;0&#x27;,
+  &#x27;thread_fbid&#x27; : threadID,
+};
+
+for (var i = 0; i &#x3c; userID.length; i++){
+  if (utils.getType(userID[i]) !== &#x22;Number&#x22; &#x26;&#x26; utils.getType(userID[i]) !== &#x22;String&#x22;) {
+    throw {error: &#x22;Elements of userID should be of type Number or String and not &#x22; + utils.getType(userID[i]) + &#x22;.&#
+x22;};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.generateTimestampRelative" id="apidoc.element.facebook-chat-api.utils.generateTimestampRelative">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>generateTimestampRelative
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function generateTimestampRelative() {
+  var d = new Date();
+  return d.getHours() + &#x22;:&#x22; + padZeros(d.getMinutes());
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var form = {
+&#x27;client&#x27; : &#x27;mercury&#x27;,
+&#x27;action_type&#x27; : &#x27;ma-type:log-message&#x27;,
+&#x27;author&#x27; : &#x27;fbid:&#x27; + ctx.userID,
+&#x27;thread_id&#x27; : &#x27;&#x27;,
+&#x27;timestamp&#x27; : Date.now(),
+&#x27;timestamp_absolute&#x27; : &#x27;Today&#x27;,
+&#x27;timestamp_relative&#x27; : utils.<span class="apidocCodeKeywordSpan">generateTimestampRelative</span>(),
+&#x27;timestamp_time_passed&#x27; : &#x27;0&#x27;,
+&#x27;is_unread&#x27; : false,
+&#x27;is_cleared&#x27; : false,
+&#x27;is_forward&#x27; : false,
+&#x27;is_filtered_content&#x27; : false,
+&#x27;is_filtered_content_bh&#x27;:false,
+&#x27;is_filtered_content_account&#x27;:false,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.get" id="apidoc.element.facebook-chat-api.utils.get">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>get
+        <span class="apidocSignatureSpan">(url, jar, qs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function get(url, jar, qs) {
+  // I&#x27;m still confused about this
+  if(getType(qs) === &#x22;Object&#x22;) {
+    for(var prop in qs) {
+      if(qs.hasOwnProperty(prop) &#x26;&#x26; getType(qs[prop]) === &#x22;Object&#x22;) {
+        qs[prop] = JSON.stringify(qs[prop]);
+      }
+    }
+  }
+  var op = {
+    headers: getHeaders(url),
+    timeout: 60000,
+    qs: qs,
+    url: url,
+    method: &#x22;GET&#x22;,
+    jar: jar,
+    gzip: true
+  };
+
+  return request(op).then(function(res) {return res[0];});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+
+        // This means the account has login approvals turned on.
+        if (headers.location.indexOf(&#x27;https://www.facebook.com/checkpoint/&#x27;) &#x3e; -1) {
+var nextURL = &#x27;https://www.facebook.com/checkpoint/?next=https%3A%2F%2Fwww.facebook.com%2Fhome.php&#x27;;
+
+return utils
+  .<span class="apidocCodeKeywordSpan">get</span>(headers.location, jar)
+  .then(utils.saveCookies(jar))
+  .then(function(res) {
+    var html = res.body;
+    // Make the form in advance which will contain the fb_dtsg and nh
+    var $ = cheerio.load(html);
+    var arr = [];
+    $(&#x22;form input&#x22;).map(function(i, v){
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.getAppState" id="apidoc.element.facebook-chat-api.utils.getAppState">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>getAppState
+        <span class="apidocSignatureSpan">(jar)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getAppState(jar){
+  return jar
+    .getCookies(&#x22;https://www.facebook.com&#x22;)
+    .concat(jar.getCookies(&#x22;https://facebook.com&#x22;))
+    .concat(jar.getCookies(&#x22;https://www.messenger.com&#x22;));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+2. Why doesn&#x27;t `sendMessage` always work when I&#x27;m logged in as a page?
+&#x3e; Pages can&#x27;t start conversations with users directly; this is to prevent pages from spamming users.
+
+3. What do I do when `login` doesn&#x27;t work?
+&#x3e; First check that you can login to Facebook using the website. If login approvals are enabled, you might be logging in incorrectly
+. For how to handle login approvals, read our docs on [`login`](DOCS.md#login).
+
+4. How can I avoid logging in every time?  Can I log into a previous session?
+&#x3e; We support caching everything relevant for you to bypass login. `api.<span class="apidocCodeKeywordSpan">getAppState</span
+>()` returns an object that you can save and pass into login as `{appState: mySavedAppState}` instead of the credentials object.
+If this fails, your session has expired.
+
+5. Do you support sending messages as a page?
+&#x3e; Yes, set the pageID option on login (this doesn&#x27;t work if you set it using api.setOptions, it affects the login process
+).
+&#x3e; ```js
+&#x3e; login(credentials, {pageID: xxxxx}, function(api) { ... }
+&#x3e; ```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.getFrom" id="apidoc.element.facebook-chat-api.utils.getFrom">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>getFrom
+        <span class="apidocSignatureSpan">(str, startToken, endToken)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getFrom(str, startToken, endToken) {
+  var start = str.indexOf(startToken) + startToken.length;
+  if(start &#x3c; startToken.length) return &#x22;&#x22;;
+
+  var lastHalf = str.substring(start);
+  var end = lastHalf.indexOf(endToken);
+  if (end === -1) {
+    throw Error(&#x22;Could not find endTime `&#x22; + endToken + &#x22;` in the given string.&#x22;);
+  }
+  return lastHalf.substring(0, end);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+
+arr = arr.filter(function(v) {
+  return v.val &#x26;&#x26; v.val.length;
+});
+
+var form = utils.arrToForm(arr);
+form.lsd = utils.<span class="apidocCodeKeywordSpan">getFrom</span>(html, &#x22;[\&#x22;LSD\&#x22;,[],{\&#x22;token\&#x22;:\&#x22
+;&#x22;, &#x22;\&#x22;}&#x22;);
+form.lgndim = new Buffer(&#x22;{\&#x22;w\&#x22;:1440,\&#x22;h\&#x22;:900,\&#x22;aw\&#x22;:1440,\&#x22;ah\&#x22;:834,\&#x22;c\&#x22
+;:24}&#x22;).toString(&#x27;base64&#x27;);
+form.email = email;
+form.pass = password;
+form.default_persistent = &#x27;0&#x27;;
+form.lgnrnd = utils.getFrom(html, &#x22;name=\&#x22;lgnrnd\&#x22; value=\&#x22;&#x22;, &#x22;\&#x22;&#x22;);
+form.locale = &#x27;en_US&#x27;;
+form.timezone = &#x27;240&#x27;;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.getGUID" id="apidoc.element.facebook-chat-api.utils.getGUID">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>getGUID
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getGUID() {
+<span class="apidocCodeCommentSpan">  /** @type {number} */
+</span>  var sectionLength = Date.now();
+  /** @type {string} */
+  var id = &#x22;xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx&#x22;.replace(/[xy]/g, function(c) {
+    /** @type {number} */
+    var r = Math.floor((sectionLength + Math.random() * 16) % 16);
+    /** @type {number} */
+    sectionLength = Math.floor(sectionLength / 16);
+    /** @type {string} */
+    var _guid = (c == &#x22;x&#x22; ? r : r &#x26; 7 | 8).toString(16);
+    return _guid;
+  });
+  return id;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var form = {
+  &#x27;value&#x27; : name.toLowerCase(),
+  &#x27;viewer&#x27; : ctx.userID,
+  &#x27;rsp&#x27; : &#x22;search&#x22;,
+  &#x27;context&#x27; : &#x22;search&#x22;,
+  &#x27;path&#x27; : &#x22;/home.php&#x22;,
+  &#x27;request_id&#x27; : utils.<span class="apidocCodeKeywordSpan">getGUID</span>(),
+};
+
+defaultFuncs
+  .get(&#x22;https://www.facebook.com/ajax/typeahead/search.php&#x22;, ctx.jar, form)
+  .then(utils.parseAndCheckLogin(ctx.jar, defaultFuncs))
+  .then(function(resData) {
+    if (resData.error) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.getJar" id="apidoc.element.facebook-chat-api.utils.getJar">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>getJar
+        <span class="apidocSignatureSpan">(store)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getJar = function (store) {
+  return cookies.jar(store)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    });
+};
+}
+
+// Helps the login
+function loginHelper(appState, email, password, globalOptions, callback) {
+var mainPromise = null;
+var jar = utils.<span class="apidocCodeKeywordSpan">getJar</span>();
+
+// If we&#x27;re given an appState we loop through it and save each cookie
+// back into the jar.
+if(appState) {
+  appState.map(function(c) {
+    var str = c.key + &#x22;=&#x22; + c.value + &#x22;; expires=&#x22; + c.expires + &#x22;; domain=&#x22; + c.domain + &#x22;;
+path=&#x22; + c.path + &#x22;;&#x22;;
+    jar.setCookie(str, &#x22;http://&#x22; + c.domain);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.getSignatureID" id="apidoc.element.facebook-chat-api.utils.getSignatureID">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>getSignatureID
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getSignatureID(){
+  return Math.floor(Math.random() * 2147483648).toString(16);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    &#x27;status&#x27; : &#x27;0&#x27;,
+    &#x27;offline_threading_id&#x27; : messageAndOTID,
+    &#x27;message_id&#x27; : messageAndOTID,
+    &#x27;threading_id&#x27;: utils.generateThreadingID(ctx.clientID),
+    &#x27;ephemeral_ttl_mode:&#x27;: &#x27;0&#x27;,
+    &#x27;manual_retry_cnt&#x27; : &#x27;0&#x27;,
+    &#x27;has_attachment&#x27; : !!(msg.attachment || msg.url || msg.sticker),
+    &#x27;signatureID&#x27; : utils.<span class="apidocCodeKeywordSpan">getSignatureID</span>(),
+  };
+
+  handleSticker(msg, form, callback,
+    () =&#x3e; handleAttachment(msg, form, callback,
+      () =&#x3e; handleUrl(msg, form, callback,
+        () =&#x3e; send(form, threadID, messageAndOTID, callback))));
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.getType" id="apidoc.element.facebook-chat-api.utils.getType">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>getType
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getType(obj) {
+  return Object.prototype.toString.call(obj).slice(8, -1);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  .catch(function(e) {
+    log.error(&#x22;login&#x22;, e.error || e);
+    callback(e);
+  });
+}
+
+function login(loginData, options, callback) {
+if(utils.<span class="apidocCodeKeywordSpan">getType</span>(options) === &#x27;Function&#x27;) {
+  callback = options;
+  options = {};
+}
+
+var globalOptions = {
+  selfListen: false,
+  listenEvents: false,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.isReadableStream" id="apidoc.element.facebook-chat-api.utils.isReadableStream">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>isReadableStream
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function isReadableStream(obj) {
+  return obj instanceof stream.Stream &#x26;&#x26;
+    getType(obj._read) === &#x27;Function&#x27; &#x26;&#x26;
+    getType(obj._readableState) === &#x27;Object&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+module.exports = function(defaultFuncs, api, ctx) {
+  function uploadAttachment(attachments, callback) {
+    var uploads = [];
+
+    // create an array of promises
+    for (var i = 0; i &#x3c; attachments.length; i++) {
+if (!utils.<span class="apidocCodeKeywordSpan">isReadableStream</span>(attachments[i])) {
+  throw {error: &#x22;Attachment should be a readable stream and not &#x22; + utils.getType(attachments[i]) + &#x22;.&#x22;};
+}
+
+var form = {
+  upload_1024: attachments[i],
+  &#x27;voice_clip&#x27;: &#x27;true&#x27;,
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.makeDefaults" id="apidoc.element.facebook-chat-api.utils.makeDefaults">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>makeDefaults
+        <span class="apidocSignatureSpan">(html, userID)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function makeDefaults(html, userID) {
+  var reqCounter = 1;
+  var fb_dtsg = getFrom(html, &#x22;name=\&#x22;fb_dtsg\&#x22; value=\&#x22;&#x22;, &#x22;\&#x22;&#x22;);
+  var ttstamp = &#x22;&#x22;;
+  for (var i = 0; i &#x3c; fb_dtsg.length; i++) {
+    ttstamp += fb_dtsg.charCodeAt(i);
+  }
+  ttstamp += &#x27;2&#x27;;
+  var revision = getFrom(html, &#x22;revision\&#x22;:&#x22;,&#x22;,&#x22;);
+
+  function mergeWithDefaults(obj) {
+    var newObj = {
+      __user: userID,
+      __req: (reqCounter++).toString(36),
+      __rev: revision,
+      __a: 1,
+      fb_dtsg: fb_dtsg,
+      ttstamp: ttstamp,
+    };
+
+    if(!obj) return newObj;
+
+    for(var prop in obj) {
+      if(obj.hasOwnProperty(prop)) {
+        if (!newObj[prop]) {
+          newObj[prop] = obj[prop];
+        }
+      }
+    }
+
+    return newObj;
+  }
+
+  function postWithDefaults(url, jar, form) {
+    return post(url, jar, mergeWithDefaults(form));
+  }
+
+  function getWithDefaults(url, jar, qs) {
+    return get(url, jar, mergeWithDefaults(qs));
+  }
+
+  function postFormDataWithDefault(url, jar, form, qs) {
+    return postFormData(url, jar, mergeWithDefaults(form), mergeWithDefaults(qs));
+  }
+
+  return {
+    get: getWithDefaults,
+    post: postWithDefaults,
+    postFormData: postFormDataWithDefault,
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  &#x27;removeUserFromGroup&#x27;,
+  &#x27;searchForThread&#x27;,
+  &#x27;sendMessage&#x27;,
+  &#x27;sendTypingIndicator&#x27;,
+  &#x27;setTitle&#x27;,
+];
+
+var defaultFuncs = utils.<span class="apidocCodeKeywordSpan">makeDefaults</span>(html, userID);
+
+// Load all api functions in a loop
+apiFuncNames.map(function(v) {
+  api[v] = require(&#x27;./src/&#x27; + v)(defaultFuncs, api, ctx);
+});
+
+return [ctx, defaultFuncs, api];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.makeParsable" id="apidoc.element.facebook-chat-api.utils.makeParsable">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>makeParsable
+        <span class="apidocSignatureSpan">(html)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function makeParsable(html) {
+  return html.replace(/for\s*\(\s*;\s*;\s*\)\s*;\s*/, &#x22;&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  return utils
+    .get(&#x22;https://0-edge-chat.facebook.com/pull&#x22;, ctx.jar, form)
+    .then(utils.saveCookies(ctx.jar))
+    .then(function(res) {
+      var ret = null;
+      try {
+        ret = JSON.parse(utils.<span class="apidocCodeKeywordSpan">makeParsable</span>(res.body));
+      } catch(e) {
+        throw {error: &#x22;Error inside first pull request. Received HTML instead of JSON. Logging in inside a browser might help
+ fix this.&#x22;};
+      }
+
+      return ret;
+    });
+})
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.parseAndCheckLogin" id="apidoc.element.facebook-chat-api.utils.parseAndCheckLogin">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>parseAndCheckLogin
+        <span class="apidocSignatureSpan">(jar, defaultFuncs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function parseAndCheckLogin(jar, defaultFuncs) {
+  return function(data) {
+    return bluebird.try(function() {
+      log.verbose(&#x22;parseAndCheckLogin&#x22;, data.body);
+      if (data.statusCode &#x3e;= 500 &#x26;&#x26; data.statusCode &#x3c; 600) {
+        log.warn(&#x22;parseAndCheckLogin&#x22;, &#x22;Got status code &#x22; + data.statusCode + &#x22; retrying...&#x22;);
+        var url = data.request.uri.protocol + &#x22;//&#x22; + data.request.uri.hostname + data.request.uri.pathname;
+        if (data.request.headers[&#x27;Content-Type&#x27;].split(&#x22;;&#x22;)[0] === &#x22;multipart/form-data&#x22;) {
+          return defaultFuncs
+            .postFormData(url, jar, data.request.formData, {})
+            .then(parseAndCheckLogin(jar));
+        } else {
+          return defaultFuncs
+            .post(url, jar, data.request.formData)
+            .then(parseAndCheckLogin(jar));
+        }
+      }
+      if (data.statusCode !== 200) throw new Error(&#x22;parseAndCheckLogin got status code: &#x22; + data.statusCode + &#x22;. Bailing out of
+trying to parse response.&#x22;);
+
+      var res = null;
+      try {
+        res = JSON.parse(makeParsable(data.body));
+      } catch(e) {
+        throw {
+          error: &#x22;JSON.parse error. Check the `detail` property on this error.&#x22;,
+          detail: e,
+          res: data.body
+        };
+      }
+
+      // TODO: handle multiple cookies?
+      if (res.jsmods
+          &#x26;&#x26; res.jsmods.require
+          &#x26;&#x26; Array.isArray(res.jsmods.require[0])
+          &#x26;&#x26; res.jsmods.require[0][0] === &#x22;Cookie&#x22;) {
+        res.jsmods.require[0][3][0] = res.jsmods.require[0][3][0].replace(&#x22;_js_&#x22;, &#x22;&#x22;);
+        var cookie = formatCookie(res.jsmods.require[0][3], &#x22;facebook&#x22;);
+        var cookie2 = formatCookie(res.jsmods.require[0][3], &#x22;messenger&#x22;);
+        jar.setCookie(cookie, &#x22;https://www.facebook.com&#x22;);
+        jar.setCookie(cookie2, &#x22;https://www.messenger.com&#x22;);
+      }
+
+      if (res.error === 1357001) {
+        throw {error: &#x22;Not logged in.&#x22;};
+      }
+      return res;
+    });
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    throw {error: &#x22;Elements of userID should be of type Number or String and not &#x22; + utils.getType(userID[i]) + &#x22;.&#
+x22;};
+  }
+
+  form[&#x27;log_message_data[added_participants][&#x27;+i+&#x27;]&#x27;] = &#x27;fbid:&#x27; + userID[i];
+}
+
+defaultFuncs.post(&#x22;https://www.facebook.com/messaging/send/&#x22;, ctx.jar, form)
+.then(utils.<span class="apidocCodeKeywordSpan">parseAndCheckLogin</span>(ctx.jar, defaultFuncs))
+.then(function(resData) {
+  if (!resData) {
+    throw {error: &#x22;Add to group failed.&#x22;};
+  }
+  if(resData.error) {
+    throw resData;
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.post" id="apidoc.element.facebook-chat-api.utils.post">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>post
+        <span class="apidocSignatureSpan">(url, jar, form)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function post(url, jar, form) {
+  var op = {
+    headers: getHeaders(url),
+    timeout: 60000,
+    url: url,
+    method: &#x22;POST&#x22;,
+    form: form,
+    jar: jar,
+    gzip: true
+  };
+
+  return request(op).then(function(res) {return res[0];});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var cookieData = JSON.parse(&#x22;[\&#x22;&#x22; + utils.getFrom(val, &#x22;&#x22;, &#x22;]&#x22;) + &#x22;]&#x22;);
+  jar.setCookie(utils.formatCookie(cookieData, &#x22;facebook&#x22;), &#x22;https://www.facebook.com&#x22;);
+});
+// ---------- Very Hacky Part Ends -----------------
+
+log.info(&#x22;login&#x22;, &#x22;Logging in...&#x22;);
+return utils
+  .<span class="apidocCodeKeywordSpan">post</span>(&#x22;https://www.facebook.com/login.php?login_attempt=1&#x26;lwv=110&#x22;,
+jar, form)
+  .then(utils.saveCookies(jar))
+  .then(function(res) {
+    var headers = res.headers;
+    if (!headers.location) {
+      throw {error: &#x22;Wrong username/password.&#x22;};
+    }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.postFormData" id="apidoc.element.facebook-chat-api.utils.postFormData">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>postFormData
+        <span class="apidocSignatureSpan">(url, jar, form, qs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function postFormData(url, jar, form, qs) {
+  var headers = getHeaders(url);
+  headers[&#x27;Content-Type&#x27;] = &#x27;multipart/form-data&#x27;;
+  var op = {
+    headers: headers,
+    timeout: 60000,
+    url: url,
+    method: &#x22;POST&#x22;,
+    formData: form,
+    qs: qs,
+    jar: jar,
+    gzip: true
+  };
+
+  return request(op).then(function(res) {return res[0];});
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    var form = {
+      &#x27;images_only&#x27;: &#x27;true&#x27;,
+      &#x27;attachment[]&#x27;: image,
+    };
+
+    uploads.push(defaultFuncs
+      .<span class="apidocCodeKeywordSpan">postFormData</span>(&#x22;https://upload.facebook.com/ajax/mercury/upload.php&#x22;,
+ctx.jar, form, {})
+      .then(utils.parseAndCheckLogin(ctx.jar, defaultFuncs))
+      .then(function (resData) {
+if (resData.error) {
+  throw resData;
+}
+
+return resData.payload.metadata[0];
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.facebook-chat-api.utils.saveCookies" id="apidoc.element.facebook-chat-api.utils.saveCookies">
+        function <span class="apidocSignatureSpan">facebook-chat-api.utils.</span>saveCookies
+        <span class="apidocSignatureSpan">(jar)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function saveCookies(jar) {
+  return function(res) {
+    var cookies = res.headers[&#x27;set-cookie&#x27;] || [];
+    cookies.forEach(function (c) {
+      if (c.indexOf(&#x22;.facebook.com&#x22;) &#x3e; -1) {
+        jar.setCookie(c, &#x22;https://www.facebook.com&#x22;);
+      }
+      var c2 = c.replace(/domain=\.facebook\.com/, &#x22;domain=.messenger.com&#x22;);
+      jar.setCookie(c2, &#x22;https://www.messenger.com&#x22;);
+    });
+    return res;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      jar.setCookie(utils.formatCookie(cookieData, &#x22;facebook&#x22;), &#x22;https://www.facebook.com&#x22;);
+    });
+    // ---------- Very Hacky Part Ends -----------------
+
+    log.info(&#x22;login&#x22;, &#x22;Logging in...&#x22;);
+    return utils
+      .post(&#x22;https://www.facebook.com/login.php?login_attempt=1&#x26;lwv=110&#x22;, jar, form)
+      .then(utils.<span class="apidocCodeKeywordSpan">saveCookies</span>(jar))
+      .then(function(res) {
+var headers = res.headers;
+if (!headers.location) {
+  throw {error: &#x22;Wrong username/password.&#x22;};
+}
+
+// This means the account has login approvals turned on.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
